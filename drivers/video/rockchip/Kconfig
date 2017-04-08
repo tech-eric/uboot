@@ -1,0 +1,47 @@
+#
+# video drivers selection for rockchip soc, these
+# configs only impact the compile process. you can
+# surely check all the options.In this case,all the
+# display driver will be compiled, but which port
+# finally be used is decided by dts configuration.
+#
+
+menu "Video Display Port"
+
+config DISPLAY_MIPI
+	bool "MIPI Port"
+	depends on VIDEO_ROCKCHIP
+	help
+		Involve MIPI dsi for video port.
+		if you want to enable these function,you need
+		to turn on the DM_VIDEO,VDEIO_ROCKCHIP together
+		what is more,you shoud also enable the related
+		power,such as lcd3v3, lcd1v8,lcd1v0 and so on.
+config DISPLAY_EDP
+	bool "EDP Port"
+	depends on VIDEO_ROCKCHIP
+	help
+		Involve EDP for video port.
+		if you want to enable these function,you need
+		to turn on the DM_VIDEO,VDEIO_ROCKCHIP together
+		what is more,you shoud also enable the related
+		power,such as lcd3v3, lcd1v8,lcd1v0 and so on.
+config DISPLAY_LVDS
+	bool "LVDS Port"
+	depends on VIDEO_ROCKCHIP
+	help
+		Involve LVDS for video port.
+		if you want to enable these function,you need
+		to turn on the DM_VIDEO,VDEIO_ROCKCHIP together
+		what is more,you shoud also enable the related
+		power,such as lcd3v3, lcd1v8,lcd1v0 and so on.
+config DISPLAY_HDMI
+	bool "HDMI port"
+	depends on VIDEO_ROCKCHIP
+	help
+		Involve HDMI for video port
+		if you want to enable these function,you need
+		to turn on the DM_VIDEO,VDEIO_ROCKCHIP together
+		what is more,you shoud also enable the related
+		power,such as lcd3v3, lcd1v8,lcd1v0 and so on.
+endmenu

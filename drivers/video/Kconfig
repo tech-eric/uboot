@@ -405,6 +405,8 @@ config VIDEO_ROCKCHIP
 	   (DSI). This driver supports the on-chip video output device, and
 	   targets the Rockchip RK3288.
 
+source "drivers/video/rockchip/Kconfig"
+
 config VIDEO_SANDBOX_SDL
 	bool "Enable sandbox video console using SDL"
 	depends on SANDBOX
