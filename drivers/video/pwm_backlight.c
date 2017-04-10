@@ -9,7 +9,9 @@
 #include <dm.h>
 #include <backlight.h>
 #include <pwm.h>
+#include <dm/pinctrl.h>
 #include <asm/gpio.h>
+#include <asm/arch/periph.h> 
 #include <power/regulator.h>
 
 DECLARE_GLOBAL_DATA_PTR;
@@ -111,6 +113,10 @@ static int pwm_backlight_ofdata_to_platdata(struct udevice *dev)
 
 static int pwm_backlight_probe(struct udevice *dev)
 {
+    struct udevice *pinctrl;
+    uclass_get_device(UCLASS_PINCTRL, 0, &pinctrl);
+    pinctrl_request_noflags(pinctrl, PERIPH_ID_PWM0);
+
 	return 0;
 }
 
