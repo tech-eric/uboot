@@ -20,6 +20,10 @@
 
 DECLARE_GLOBAL_DATA_PTR;
 
+#ifndef CONFIG_SPL_BUILD
+#define CONFIG_SPL_BUILD
+#endif
+
 #if CONFIG_IS_ENABLED(OF_PLATDATA)
 struct rk3399_clk_plat {
 	struct dtd_rockchip_rk3399_cru dtd;
