@@ -67,7 +67,10 @@
 #define CONFIG_EXTRA_ENV_SETTINGS \
 	ENV_MEM_LAYOUT_SETTINGS \
 	"partitions=" PARTS_DEFAULT \
-	BOOTENV
+    BOOTENV \
+    "stdin=serial,cros-ec-keyb\0" \
+    "stdout=serial,vidconsole\0" \
+    "stderr=serial,vidconsole\0"
 
 #endif
 
