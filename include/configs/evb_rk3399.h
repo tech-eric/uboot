@@ -22,4 +22,11 @@
 
 #define CONFIG_SYS_WHITE_ON_BLACK
 
+/* Enable Misc to show logo */
+#define CONFIG_BOARD_COMMON
+#define CONFIG_MISC_COMMON
+#define CONFIG_MISC_INIT_R
+#define CONFIG_CMD_BMP
+#define CONFIG_BMP_24BMP
+
 #endif
